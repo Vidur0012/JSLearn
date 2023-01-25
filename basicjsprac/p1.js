@@ -226,7 +226,7 @@ while (cnt < 10) {
 console.log(cnt);
 
 label1:
-for (let x = 0; x < 3; x++){
+for (let x = 0; x < 3; x++) {
     for (let i = 0; i < 10; i++) {
         if (i === 3) { continue label1; }
         console.log("Number is " + i);
@@ -247,11 +247,115 @@ mp1.set("a", 2);
 mp1.set("b", 3);
 mp1.set("c", 1);
 console.log(mp1);
-for(let x of mp1){
+for (let x of mp1) {
     console.log(x[0]);
 }
 
 //type conversion
 let y = "John";   // y is a string
-let x = + y; 
+let x = + y;
 console.log(typeof x);
+console.log("abc".constructor);
+console.log(void (2 == 2));
+
+//Bitwise operation
+console.log((-5 >>> 0).toString(2));
+let t = (-5 >> 1);
+console.log(t);
+console.log(t.toString(2).length);
+
+
+//Regular expression
+console.log(/e/.test("Hello world"));
+console.log(/e/.exec("Hello world"));
+
+//Error handling
+// xyz = 2;
+try {
+    console.log(xyz);
+}
+catch (err) {
+    console.log("Got an error : " + err.message);
+}
+finally {
+    console.log("finally block executed");
+}
+
+
+//scope
+function abc() {
+    fn = 99;   //global scope
+}
+abc();
+console.log(fn);
+
+function test() {
+    var foo = 33;
+    if (foo) {
+        // let foo = foo + 55; // ReferenceError
+    }
+}
+test();
+
+
+function abcd() {
+    //strict mode 
+
+    "use strict";
+    // abcde =4; //not allowed
+}
+abcd();
+
+//this keyword
+console.log(this.toString());
+
+function fn2() {
+    "use strict";
+    return this;
+}
+console.log(fn2());
+
+const p1 = {
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+const p2 = {
+    firstName: "Abc",
+    lastName: "Xyz",
+}
+
+// Return "John Doe":
+console.log(p1.fullName.call(p2));
+
+//Arrow function
+arrfn = (nm) => "Hello " + nm;
+console.log(arrfn("Person1"));
+
+//Classes
+class Car {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+    age() {
+        let date = new Date();
+        return date.getFullYear() - this.year;
+    }
+}
+let car = new Car("Ford",2019);
+console.log(car.age(Date().getFullYear));
+
+//modules
+// import person3 from "./p2.js";
+// console.log(person3());
+
+//JSON
+let jsontxt = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+let jsonobj = JSON.parse(jsontxt);
+console.log(jsonobj);
