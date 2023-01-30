@@ -344,19 +344,47 @@ class Car {
         return date.getFullYear() - this.year;
     }
 }
-let car = new Car("Ford",2019);
+let car = new Car("Ford", 2019);
 console.log(car.age(Date().getFullYear));
 
-//modules
+// modules
 // import person3 from "./p2.js";
 // console.log(person3());
 
 //JSON
 let jsontxt = '{ "employees" : [' +
-'{ "firstName":"John" , "lastName":"Doe" },' +
-'{ "firstName":"Anna" , "lastName":"Smith" },' +
-'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+    '{ "firstName":"John" , "lastName":"Doe" },' +
+    '{ "firstName":"Anna" , "lastName":"Smith" },' +
+    '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
 
 let jsonobj = JSON.parse(jsontxt);
 console.log(jsonobj);
+
+//DOM
+const ele = document.getElementById("demo");
+ele.innerHTML = "Date : " + Date();
+ele.className = "class2";
+ele.style.color = "orange";
+
+document.write("dsfdsf");
+
+function function1() {
+    console.log(this);
+    this.innerHTML = "New Button";
+}
+document.getElementById("btn1").onclick = function1;
+
+document.getElementById("id02").innerHTML =
+    document.getElementById("id01").nodeName;
+
+function myFunction(arg1, arg2) {
+    this.firstName = arg1;
+    this.lastName = arg2;
+}
+
+// This creates a new object
+const myObj = new myFunction("John", "Doe");
+
+// This will return "John"
+myObj.firstName;  
 
