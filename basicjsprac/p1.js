@@ -388,3 +388,12 @@ const myObj = new myFunction("John", "Doe");
 // This will return "John"
 myObj.firstName;  
 
+function a(){
+    var x=0,z=10;
+    return function(){
+        console.log(x);
+    }
+}
+a()();
+
+ttt = 6;
