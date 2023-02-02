@@ -35,12 +35,13 @@ setTimeout(function(){
 
 
 // ? 
-// let startDate =  new Date().getTime();
-// let  endDate= new Date().getTime();
-// while(endDate  < startDate + 6000){
-//     endDate  = new Date().getTime();
-// }
-// console.log("While ended");
+let startDate =  new Date().getTime();
+
+let  endDate=  Date().getTime();
+while(endDate  < startDate + 6000){
+    endDate  =  Date().getTime();
+}
+console.log("While ended");
 
 //finding max using reducer
 
@@ -52,3 +53,5 @@ const output = arr.reduce(function(max,cur){
 },arr[0]);
 
 console.log(output);
+
+
