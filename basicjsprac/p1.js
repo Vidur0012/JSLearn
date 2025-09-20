@@ -89,7 +89,7 @@ console.log(myArray);
 let texts = "The rain in SPAIN stays mainly in the plain";
 console.log(texts.match(/ain/gi));
 let textsw = "Hello world, welcome to the universe.";
-console.log(textsw.startsWith("world", 6));
+console.log("abc",textsw.startsWith("world", 6));
 
 //string interpolation
 let a1 = 3;
@@ -252,6 +252,7 @@ for (let x of mp1) {
 }
 
 //type conversion
+console.log("type conversion")
 let y = "John";   // y is a string
 let x = + y;
 console.log(typeof x);
@@ -283,6 +284,7 @@ finally {
 
 
 //scope
+console.log("---------scope-----------")
 function abc() {
     fn = 99;   //global scope
 }
@@ -290,6 +292,7 @@ abc();
 console.log(fn);
 
 function test() {
+    console.log(foo)
     var foo = 33;
     if (foo) {
         // let foo = foo + 55; // ReferenceError
@@ -341,7 +344,7 @@ class Car {
     }
     age() {
         let date = new Date();
-        return date.getFullYear() - this.year;
+        return `${this.name} ${date.getFullYear() - this.year}`;
     }
 }
 let car = new Car("Ford", 2019);
